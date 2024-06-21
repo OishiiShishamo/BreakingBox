@@ -1,13 +1,13 @@
 extends Area2D
 
-var window_potision:Vector2
+var window_position:Vector2
 var player_speed = 60
 var speed = 5
 var screen_size = get_viewport_rect().size
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	window_potision = get_window().position
+	window_position = get_window().position
 	pass # Replace with function body.
 
 
@@ -33,7 +33,7 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.stop()
 	position += velocity * delta * player_speed
-	window_potision += Vector2(-velocity.x, -velocity.y)
-	get_window().position = Vector2i(window_potision)
+	window_position += Vector2(-velocity.x, -velocity.y)
+	get_window().position = Vector2i(window_position)
 	
 	pass
