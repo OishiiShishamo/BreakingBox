@@ -3,14 +3,14 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Vector2 default_window_potision = DisplayServer.window_get_position()
+	Vector2 default_window_potision = get_window().position
 	Vector2 window_potision = Vector2(0, 0)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	DisplayServer.window_set_ime_position (Vector2(default_window_potision.x + window_potision.x, default_window_potision.x + window_potision.x))
+	get_window().position = Vector2(default_window_potision.x + window_potision.x, default_window_potision.x + window_potision.x)
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
 		velocity.x -= 1
