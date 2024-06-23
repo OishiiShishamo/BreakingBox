@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://df083eyw0bvuq"]
+[gd_scene load_steps=4 format=3 uid="uid://df083eyw0bvuq"]
 
-[ext_resource type="AudioStream" uid="uid://bnp4hy0t8c8ik" path="res://5000tyouen.wav" id="1_kggh2"]
-[ext_resource type="PackedScene" uid="uid://c881s7bgvuf02" path="res://player.tscn" id="2_be8gt"]
+[ext_resource type="Script" path="res://main.gd" id="1_2v23m"]
+[ext_resource type="PackedScene" uid="uid://cs816kq0r3scl" path="res://screen.tscn" id="3_dmtbi"]
+[ext_resource type="PackedScene" uid="uid://jxa8feog6qfi" path="res://audio_manager.tscn" id="3_y0m7p"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_2v23m")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_kggh2")
-autoplay = true
+[node name="screen" parent="." instance=ExtResource("3_dmtbi")]
 
-[node name="player" parent="." instance=ExtResource("2_be8gt")]
+[node name="audio_manager" parent="." instance=ExtResource("3_y0m7p")]
