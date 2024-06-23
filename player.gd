@@ -46,8 +46,8 @@ func _process(delta:float):
 	#position += velocity * delta * player_speed
 	#DisplayServer.window_set_size(Vector2i(abs(sin(PI / 180 * GlobalVar.frame * 12) * 640), abs(sin(PI / 180 * GlobalVar.frame * 12) * 480)))
 	
-	#window_position += Vector2(-grav_direction.x, -grav_direction.y)
+	window_position += Vector2(-grav_direction.x, -grav_direction.y)
 	
 	get_window().position = Vector2i(window_position)
 	$RigidBody2D.gravity_scale = 0.0
-	$RigidBody2D.apply_force($RigidBody2D.mass * 10.0 * grav_direction * 9.8)
+	$RigidBody2D.apply_force($RigidBody2D.mass * 50.0 * grav_direction * 9.8)
