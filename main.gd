@@ -7,6 +7,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta:float):
+	#escキーが押されたら終了する
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	pass
